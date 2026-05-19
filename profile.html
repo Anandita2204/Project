@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campusly Profile</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI',sans-serif;
+    }
+
+    body{
+      background:
+      linear-gradient(135deg,#1a1635,#0e1020,#ff5ea8);
+      min-height:100vh;
+      padding:40px;
+      color:white;
+    }
+
+    .profile-container{
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:30px;
+    }
+
+    /* LEFT PROFILE CARD */
+
+    .profile-sidebar{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:35px 25px;
+      backdrop-filter:blur(20px);
+      height:fit-content;
+      box-shadow:0 10px 40px rgba(0,0,0,0.25);
+    }
+
+    .logo{
+      width:70px;
+      margin-bottom:30px;
+    }
+
+    .profile-image-box{
+      display:flex;
+      justify-content:center;
+      margin-bottom:20px;
+    }
+
+    .profile-image{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      border:4px solid rgba(255,255,255,0.15);
+      object-fit:cover;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .user-name{
+      text-align:center;
+      font-size:28px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .user-course{
+      text-align:center;
+      color:#cfcfe8;
+      margin-bottom:30px;
+      font-size:15px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+      margin-top:25px;
+    }
+
+    .stat-card{
+      background:rgba(255,255,255,0.05);
+      border-radius:18px;
+      padding:18px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .stat-card h3{
+      font-size:24px;
+      color:#ff79b0;
+      margin-bottom:6px;
+    }
+
+    .stat-card p{
+      font-size:13px;
+      color:#cfcfe8;
+    }
+
+    /* RIGHT CONTENT */
+
+    .profile-content{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:35px;
+      backdrop-filter:blur(20px);
+      box-shadow:0 10px 40px rgba(0,0,0,0.25);
+    }
+
+    .card-title{
+      font-size:30px;
+      margin-bottom:25px;
+      font-weight:700;
+    }
+
+    .card-title span{
+      background:linear-gradient(to right,#9b5cff,#ff5ea8);
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+    }
+
+    .info-box{
+      background:rgba(255,255,255,0.04);
+      padding:22px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .info-box label{
+      display:block;
+      color:#bdbdd8;
+      margin-bottom:10px;
+      font-size:14px;
+    }
+
+    .info-box p{
+      font-size:18px;
+      font-weight:600;
+    }
+
+    .activity-list{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .activity-item{
+      background:rgba(255,255,255,0.04);
+      border-radius:18px;
+      padding:20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .activity-left h4{
+      margin-bottom:6px;
+      font-size:18px;
+    }
+
+    .activity-left p{
+      color:#cfcfe8;
+      font-size:14px;
+    }
+
+    .badge{
+      padding:10px 18px;
+      border-radius:30px;
+      background:linear-gradient(to right,#8b5cf6,#ff5ea8);
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .edit-btn{
+      margin-top:30px;
+      width:100%;
+      height:58px;
+      border:none;
+      border-radius:18px;
+      background:linear-gradient(to right,#9b5cff,#ff5ea8);
+      color:white;
+      font-size:17px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .edit-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(255,94,168,0.25);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px){
+
+      .profile-container{
+        grid-template-columns:1fr;
+      }
+
+      .info-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="profile-container">
+
+    <!-- SIDEBAR -->
+
+    <div class="profile-sidebar">
+
+      <img src="https://via.placeholder.com/70" class="logo">
+
+      <div class="profile-image-box">
+        <img
+          src="https://i.pravatar.cc/300"
+          class="profile-image"
+          id="profileImage"
+        >
+      </div>
+
+      <h2 class="user-name" id="userName">
+        Priya Sharma
+      </h2>
+
+      <p class="user-course" id="userCourse">
+        B.Tech CSE • Semester 4
+      </p>
+
+      <div class="stats">
+
+        <div class="stat-card">
+          <h3>12</h3>
+          <p>Products</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>8</h3>
+          <p>Sold</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>4.8</h3>
+          <p>Rating</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>24</h3>
+          <p>Chats</p>
+        </div>
+
+      </div>
+
+      <button class="edit-btn">
+        Edit Profile
+      </button>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="profile-content">
+
+      <!-- PROFILE INFO -->
+
+      <div class="card">
+
+        <h2 class="card-title">
+          Student <span>Profile</span>
+        </h2>
+
+        <div class="info-grid">
+
+          <div class="info-box">
+            <label>Full Name</label>
+            <p id="fullName">
+              Priya Sharma
+            </p>
+          </div>
+
+          <div class="info-box">
+            <label>Enrollment Number</label>
+            <p id="enrollment">
+              230101001
+            </p>
+          </div>
+
+          <div class="info-box">
+            <label>Course</label>
+            <p id="course">
+              B.Tech
+            </p>
+          </div>
+
+          <div class="info-box">
+            <label>Semester</label>
+            <p id="semester">
+              4th Semester
+            </p>
+          </div>
+
+          <div class="info-box">
+            <label>Department</label>
+            <p id="department">
+              Computer Science Engineering
+            </p>
+          </div>
+
+          <div class="info-box">
+            <label>Email Address</label>
+            <p id="email">
+              priya@example.com
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RECENT ACTIVITY -->
+
+      <div class="card">
+
+        <h2 class="card-title">
+          Recent <span>Activity</span>
+        </h2>
+
+        <div class="activity-list">
+
+          <div class="activity-item">
+
+            <div class="activity-left">
+              <h4>Engineering Mathematics Book</h4>
+              <p>Listed 2 hours ago</p>
+            </div>
+
+            <div class="badge">
+              Active
+            </div>
+
+          </div>
+
+          <div class="activity-item">
+
+            <div class="activity-left">
+              <h4>Scientific Calculator</h4>
+              <p>Sold yesterday</p>
+            </div>
+
+            <div class="badge">
+              Sold
+            </div>
+
+          </div>
+
+          <div class="activity-item">
+
+            <div class="activity-left">
+              <h4>Badminton Kit</h4>
+              <p>Interested buyers: 5</p>
+            </div>
+
+            <div class="badge">
+              Trending
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    /*
+      SAMPLE DATA
+      Replace with real database later
+    */
+
+    const userData = {
+      name: "Priya Sharma",
+      enrollment: "230101001",
+      course: "B.Tech",
+      semester: "4th Semester",
+      department: "Computer Science Engineering",
+      email: "priya@example.com"
+    };
+
+    // LOAD USER DATA
+
+    document.getElementById("userName").innerText =
+      userData.name;
+
+    document.getElementById("fullName").innerText =
+      userData.name;
+
+    document.getElementById("enrollment").innerText =
+      userData.enrollment;
+
+    document.getElementById("course").innerText =
+      userData.course;
+
+    document.getElementById("semester").innerText =
+      userData.semester;
+
+    document.getElementById("department").innerText =
+      userData.department;
+
+    document.getElementById("email").innerText =
+      userData.email;
+
+    document.getElementById("userCourse").innerText =
+      userData.course + " • " + userData.semester;
+
+  </script>
+
+</body>
+</html>

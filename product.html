@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campusly - Product Details</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0d0b1f;
+      color:white;
+    }
+
+    /*.container{
+      display:flex;
+      min-height:100vh;
+    }*/
+
+   /* SIDEBAR */
+
+    /*.sidebar{
+        display: none;
+      width:240px;
+      background:#141028;
+      padding:30px 20px;
+      border-right:1px solid rgba(255,255,255,0.05);
+      position:fixed;
+      height:100vh;
+    }*/
+
+
+    /*.logo{
+      font-size:28px;
+      font-weight:700;
+      color:#d946ef;
+      margin-left: 100px;
+    }*/
+     .navbar{
+      width:100%;
+      padding:18px 40px;
+     /* justify-content:space-between;
+      align-items:center;*/
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(12px);
+      background:rgba(15,17,26,0.9);
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+      background:linear-gradient(to right,#9b5cff,#ff6cab);
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+   /* main*/
+    .main{
+      margin-left:0;
+      width:100%;
+      padding:40px;
+    }
+
+    .page-title{
+      font-size:32px;
+      font-weight:700;
+      margin-bottom:30px;
+    }
+
+    .product-container{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:start;
+    }
+
+    /* IMAGE SECTION */
+
+    .image-section{
+      background:#17132d;
+      border-radius:24px;
+      padding:25px;
+      box-shadow:0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .main-image{
+      width:100%;
+      height:420px;
+      border-radius:20px;
+      overflow:hidden;
+      margin-bottom:18px;
+    }
+
+    .main-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .thumbnail-container{
+      display:flex;
+      gap:12px;
+    }
+
+    .thumbnail{
+      width:90px;
+      height:90px;
+      border-radius:14px;
+      overflow:hidden;
+      cursor:pointer;
+      border:2px solid transparent;
+      transition:0.3s;
+    }
+
+    .thumbnail img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .thumbnail:hover{
+      border-color:#d946ef;
+    }
+
+    /* DETAILS SECTION */
+
+    .details-section{
+      background:#17132d;
+      border-radius:24px;
+      padding:35px;
+      box-shadow:0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .product-category{
+      display:inline-block;
+      background:rgba(217,70,239,0.15);
+      color:#e879f9;
+      padding:8px 16px;
+      border-radius:50px;
+      font-size:14px;
+      margin-bottom:18px;
+    }
+
+    .product-title{
+      font-size:34px;
+      font-weight:700;
+      margin-bottom:15px;
+      line-height:1.3;
+    }
+
+    .price-section{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:25px;
+    }
+
+    .selling-price{
+      font-size:36px;
+      color:#d946ef;
+      font-weight:700;
+    }
+
+    .original-price{
+      font-size:22px;
+      color:#888;
+      text-decoration:line-through;
+    }
+
+    .condition{
+      margin-bottom:22px;
+      font-size:16px;
+      color:#d6d6e7;
+    }
+
+    .condition span{
+      color:#d946ef;
+      font-weight:600;
+    }
+
+    .description-title{
+      font-size:20px;
+      margin-bottom:12px;
+      font-weight:600;
+    }
+
+    .description{
+      color:#c7c7da;
+      line-height:1.9;
+      margin-bottom:30px;
+    }
+
+    .product-info{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-bottom:30px;
+    }
+
+    .info-box{
+      background:#221b3d;
+      padding:18px;
+      border-radius:16px;
+    }
+
+    .info-box h4{
+      font-size:14px;
+      color:#a1a1c4;
+      margin-bottom:8px;
+      font-weight:500;
+    }
+
+    .info-box p{
+      font-size:16px;
+      font-weight:600;
+    }
+
+    .buttons{
+      display:flex;
+      gap:18px;
+      margin-top:10px;
+    }
+
+    .btn{
+      flex:1;
+      padding:16px;
+      border:none;
+      border-radius:14px;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .buy-btn{
+      background:linear-gradient(90deg,#c026d3,#9333ea);
+      color:white;
+    }
+
+    .buy-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(192,38,211,0.3);
+    }
+
+    .wishlist-btn{
+      background:#241d42;
+      color:white;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .wishlist-btn:hover{
+      background:#32275c;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1000px){
+
+      .product-container{
+        grid-template-columns:1fr;
+      }
+
+      .sidebar{
+        display:none;
+      }
+
+      .main{
+        margin-left:0;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .main{
+        padding:20px;
+      }
+
+      .product-title{
+        font-size:26px;
+      }
+
+      .selling-price{
+        font-size:28px;
+      }
+
+      .buttons{
+        flex-direction:column;
+      }
+
+      .product-info{
+        grid-template-columns:1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">Campusly</div>
+
+    <div class="nav-right">
+
+
+    <!-- SIDEBAR -->
+
+     <!--<div class="sidebar">
+
+      <div class="logo">Campusly</div>-->
+
+     <!-- <div class="nav-links">
+        <a href="#">Overview</a>
+        <a href="#">My Listings</a>
+        <a href="#" class="active">Product Details</a>
+        <a href="#">Messages</a>
+        <a href="#">Browse</a>
+      </div>-->
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main">
+
+      <h1 class="page-title">Product Details</h1>
+
+      <div class="product-container">
+
+        <!-- LEFT IMAGE SECTION -->
+
+        <div class="image-section">
+
+          <div class="main-image">
+            <img id="bigImage"
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop"
+              alt="Product">
+          </div>
+
+          <div class="thumbnail-container">
+
+            <div class="thumbnail">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop"
+                onclick="changeImage(this.src)">
+            </div>
+
+            <div class="thumbnail">
+              <img
+                src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200&auto=format&fit=crop"
+                onclick="changeImage(this.src)">
+            </div>
+
+            <div class="thumbnail">
+              <img
+                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=1200&auto=format&fit=crop"
+                onclick="changeImage(this.src)">
+            </div>
+
+            <div class="thumbnail">
+              <img
+                src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?q=80&w=1200&auto=format&fit=crop"
+                onclick="changeImage(this.src)">
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT DETAILS SECTION -->
+
+        <div class="details-section">
+
+          <div class="product-category">Footwear</div>
+
+          <h2 class="product-title">
+            Nike Air Max Limited Edition Sneakers
+          </h2>
+
+          <div class="price-section">
+            <div class="selling-price">₹2,499</div>
+            <div class="original-price">₹4,999</div>
+          </div>
+
+          <div class="condition">
+            Condition :
+            <span>Like New</span>
+          </div>
+
+          <h3 class="description-title">Description</h3>
+
+          <p class="description">
+            Stylish and comfortable Nike Air Max sneakers available in
+            excellent condition. Perfect for college students looking
+            for premium footwear at an affordable price. Used only a few
+            times and maintained properly.
+          </p>
+
+          <div class="product-info">
+
+            <div class="info-box">
+              <h4>Seller</h4>
+              <p>Rahul Verma</p>
+            </div>
+
+            <div class="info-box">
+              <h4>Location</h4>
+              <p>Varanasi</p>
+            </div>
+
+            <div class="info-box">
+              <h4>Posted On</h4>
+              <p>19 May 2026</p>
+            </div>
+
+            <div class="info-box">
+              <h4>Category</h4>
+              <p>Fashion</p>
+            </div>
+
+          </div>
+
+          <div class="buttons">
+
+            <button class="btn buy-btn">
+              Chat with Seller
+            </button>
+
+            <button class="btn wishlist-btn">
+              Add to Wishlist
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function changeImage(imageSrc){
+      document.getElementById("bigImage").src = imageSrc;
+    }
+
+  </script>
+
+</body>
+</html>

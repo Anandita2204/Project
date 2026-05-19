@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campusly - Your Campus Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Campusly Logo" id="nav-logo">
+                <span class="logo-text">Campusly</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About Us</a>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="auth.html?mode=signup" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About Us</a>
+            <a href="auth.html" class="btn btn-outline">Login</a>
+            <a href="auth.html?mode=signup" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="assets/images/logo.png" alt="Campusly" id="hero-logo-img">
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Campusly</span>
+                </h1>
+                <p class="tagline" id="tagline">
+                    <!-- Your tagline will go here -->
+                    Your Campus, Your Marketplace
+                </p>
+                <p class="hero-description">
+                    Meeting up to trade a textbook or a cycle is as easy and casual as grabbing a coffee at VT!😉
+                </p>
+                <div class="hero-buttons">
+                    <a href="login.html" class="btn btn-hero btn-buyers">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Start Buying</span>
+                    </a>
+                    <a href="login.html" class="btn btn-hero btn-sellers">
+                        <i class="fas fa-store"></i>
+                        <span>Start Selling</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="1200">0</span>+
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="3500">0</span>+
+                        <span class="stat-label">Products Listed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="850">0</span>+
+                        <span class="stat-label">Successful Trades</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-book"></i>
+                        <span>Books</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-laptop"></i>
+                        <span>Electronics</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-football-ball"></i>
+                        <span>Sports</span>
+                    </div>
+                    <div class="floating-card card-4">
+                        <i class="fas fa-pen"></i>
+                        <span>Stationery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2>Features That Make Us <span class="gradient-text">Different</span></h2>
+                <p>Everything you need for a seamless campus trading experience</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Verified Students Only</h3>
+                    <p>Every user is verified through enrollment number, ensuring a safe and trusted community.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Direct Chat</h3>
+                    <p>Connect directly with buyers and sellers through our built-in messaging system.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Zero Commission</h3>
+                    <p>We don't charge any commission. Keep all your earnings from every sale.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Quick Listings</h3>
+                    <p>List your products in under 2 minutes. Simple, fast, and effective.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Campus Meetups</h3>
+                    <p>Meet within campus for safe and convenient transactions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Ratings & Reviews</h3>
+                    <p>Build trust with community ratings and honest reviews.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Simple Process</span>
+                <h2>How <span class="gradient-text">Campusly</span> Works</h2>
+                <p>Get started in just a few simple steps</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Sign Up & Verify</h3>
+                        <p>Create your account using your enrollment number and verify via OTP.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Complete Profile</h3>
+                        <p>Add your details like name, course, semester, and profile picture.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Buy or Sell</h3>
+                        <p>Browse products to buy or list your items to sell to fellow students.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Chat & Deal</h3>
+                        <p>Connect with the other party, negotiate, and close the deal!</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Preview -->
+    <section class="categories-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Browse</span>
+                <h2>Popular <span class="gradient-text">Categories</span></h2>
+                <p>Find what you need across various categories</p>
+            </div>
+            <div class="categories-grid">
+                <a href="browse.html?category=books" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Books</h3>
+                    <p>Textbooks, novels, study materials</p>
+                    <span class="category-count">234 items</span>
+                </a>
+                <a href="browse.html?category=electronics" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Electronics</h3>
+                    <p>Laptops, phones, accessories</p>
+                    <span class="category-count">189 items</span>
+                </a>
+                <a href="browse.html?category=sports" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-football-ball"></i>
+                    </div>
+                    <h3>Sports Equipment</h3>
+                    <p>Gear, equipment, accessories</p>
+                    <span class="category-count">156 items</span>
+                </a>
+                <a href="browse.html?category=stationery" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-pen"></i>
+                    </div>
+                    <h3>Stationery</h3>
+                    <p>Pens, notebooks, art supplies</p>
+                    <span class="category-count">98 items</span>
+                </a>
+                <a href="browse.html?category=miscellaneous" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Miscellaneous</h3>
+                    <p>Everything else you need</p>
+                    <span class="category-count">312 items</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Students <span class="gradient-text">Say</span></h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Sold all my previous semester books within a week! The direct chat feature made negotiations so easy."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="[randomuser.me](https://randomuser.me/api/portraits/women/44.jpg)" alt="Student">
+                        <div>
+                            <h4>Priya Sharma</h4>
+                            <span>B.Tech CSE, 6th Sem</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Got my calculator at half price from a senior. Love how safe it feels knowing everyone is verified!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="[randomuser.me](https://randomuser.me/api/portraits/men/32.jpg)" alt="Student">
+                        <div>
+                            <h4>Rahul Verma</h4>
+                            <span>B.Com, 2nd Sem</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"The best platform for campus trading. No commission means I save money on every transaction!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="[randomuser.me](https://randomuser.me/api/portraits/women/68.jpg)" alt="Student">
+                        <div>
+                            <h4>Anita Patel</h4>
+                            <span>MBA, 3rd Sem</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Trading?</h2>
+                <p>Join thousands of students already buying and selling on Campusly</p>
+                <div class="cta-buttons">
+                    <a href="auth.html?mode=signup" class="btn btn-primary btn-large">
+                        Get Started Free
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Footer -->
+    <footer class="footer" id="about">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="assets/images/logo.png" alt="Campusly">
+                            <span>Campusly</span>
+                        </div>
+                        <p>Campusly is a student-focused marketplace designed for campus Banaras Hindu University, where students can buy, sell, and exchange items such as books, electronics, and daily essentials within a trusted community....</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="browse.html">Browse Products</a></li>
+                            <li><a href="auth.html?mode=seller">Sell Items</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#features">Features</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="browse.html?category=books">Books</a></li>
+                            <li><a href="browse.html?category=electronics">Electronics</a></li>
+                            <li><a href="browse.html?category=sports">Sports Equipment</a></li>
+                            <li><a href="browse.html?category=stationery">Stationery</a></li>
+                            <li><a href="browse.html?category=miscellaneous">Miscellaneous</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Safety Tips</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-about">
+                        <h4>About Us</h4>
+                        <p>Built by students, for students. Campusly was born from the need to have a trusted platform where campus communities can trade safely.</p>
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> support@campusly.com</p>
+                            <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Campusly. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

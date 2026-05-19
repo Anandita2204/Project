@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Products - Campusly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/browse.css">
+    <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar browse-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Campusly Logo">
+                <span class="logo-text">Campusly</span>
+            </a>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <form class="search-form" id="search-form">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search for books, electronics, and more...">
+                    <button type="submit" class="search-btn">Search</button>
+                </form>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="chat.html" class="nav-icon" title="Messages">
+                    <i class="fas fa-comments"></i>
+                    <span class="badge">3</span>
+                </a>
+                <a href="dashboard.html" class="nav-icon" title="Sell">
+                    <i class="fas fa-plus-circle"></i>
+                </a>
+                <div class="user-menu" id="user-menu">
+                    <button class="user-avatar" id="user-avatar">
+                        <img src="[randomuser.me](https://randomuser.me/api/portraits/men/32.jpg)" alt="Profile">
+                    </button>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <div class="dropdown-header">
+                            <img src="[randomuser.me](https://randomuser.me/api/portraits/men/32.jpg)" alt="Profile">
+                            <div>
+                                <h4>Rahul Verma</h4>
+                                <span>B.Tech CSE, 4th Sem</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-links">
+                            <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                            <a href="dashboard.html"><i class="fas fa-store"></i> My Listings</a>
+                            <a href="chat.html"><i class="fas fa-comments"></i> Messages</a>
+                            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            <div class="top-icons">
+                              <i class="fas fa-comments"></i>
+
+                            <!-- Wishlist -->
+                            <div class="wishlist-container">
+                                <button id="wishlistBtn" class="wishlist-btn">
+                                <i class="fas fa-heart"></i>
+                                <span id="wishlistCount">0</span>
+                                </button>
+                            </div>
+
+                            <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <!-- Wishlist Icon -->
+                    <div class="wishlist-container">
+                    <button id="wishlistBtn" class="wishlist-btn">
+                    <i class="fas fa-heart"></i>
+                    <span id="wishlistCount">0</span>
+                    </button>
+                </div>
+      
+  </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Search -->
+    <div class="mobile-search">
+        <form class="search-form" id="mobile-search-form">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search products...">
+        </form>
+    </div>
+
+    <!-- Main Content -->
+    <main class="browse-main">
+        <!-- Sidebar Filters -->
+        <aside class="filters-sidebar" id="filters-sidebar">
+            <div class="filters-header">
+                <h3>Filters</h3>
+                <button class="clear-filters" id="clear-filters">Clear All</button>
+            </div>
+            
+            <!-- Categories -->
+            <div class="filter-section">
+                <h4>Categories</h4>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="books">
+                        <span class="checkmark"></span>
+                        <span class="option-label">
+                            <i class="fas fa-book"></i> Books
+                        </span>
+                        <span class="option-count">234</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="electronics">
+                        <span class="checkmark"></span>
+                        <span class="option-label">
+                            <i class="fas fa-laptop"></i> Electronics
+                        </span>
+                        <span class="option-count">189</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="sports">
+                        <span class="checkmark"></span>
+                        <span class="option-label">
+                            <i class="fas fa-football-ball"></i> Sports Equipment
+                        </span>
+                        <span class="option-count">156</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="stationery">
+                        <span class="checkmark"></span>
+                        <span class="option-label">
+                            <i class="fas fa-pen"></i> Stationery
+                        </span>
+                        <span class="option-count">98</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="miscellaneous">
+                        <span class="checkmark"></span>
+                        <span class="option-label">
+                            <i class="fas fa-box-open"></i> Miscellaneous
+                        </span>
+                        <span class="option-count">312</span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Price Range -->
+            <div class="filter-section">
+                <h4>Price Range</h4>
+                <div class="price-inputs">
+                    <div class="price-input">
+                        <span>₹</span>
+                        <input type="number" id="min-price" placeholder="Min" min="0">
+                    </div>
+                    <span class="price-separator">to</span>
+                    <div class="price-input">
+                        <span>₹</span>
+                        <input type="number" id="max-price" placeholder="Max" min="0">
+                    </div>
+                </div>
+                <div class="price-slider-container">
+                    <input type="range" id="price-slider" min="0" max="10000" value="5000" class="price-slider">
+                    <div class="price-labels">
+                        <span>₹0</span>
+                        <span>₹10,000+</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Condition -->
+            <div class="filter-section">
+                <h4>Condition</h4>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" name="condition" value="new">
+                        <span class="checkmark"></span>
+                        <span class="option-label">Brand New</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="condition" value="like-new">
+                        <span class="checkmark"></span>
+                        <span class="option-label">Like New</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="condition" value="good">
+                        <span class="checkmark"></span>
+                        <span class="option-label">Good</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="condition" value="fair">
+                        <span class="checkmark"></span>
+                        <span class="option-label">Fair</span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Sort By -->
+            <div class="filter-section">
+                <h4>Sort By</h4>
+                <div class="sort-options">
+                    <label class="filter-option radio">
+                        <input type="radio" name="sort" value="recent" checked>
+                        <span class="radiomark"></span>
+                        <span class="option-label">Most Recent</span>
+                    </label>
+                    <label class="filter-option radio">
+                        <input type="radio" name="sort" value="price-low">
+                        <span class="radiomark"></span>
+                        <span class="option-label">Price: Low to High</span>
+                    </label>
+                    <label class="filter-option radio">
+                        <input type="radio" name="sort" value="price-high">
+                        <span class="radiomark"></span>
+                        <span class="option-label">Price: High to Low</span>
+                    </label>
+                    <label class="filter-option radio">
+                        <input type="radio" name="sort" value="popular">
+                        <span class="radiomark"></span>
+                        <span class="option-label">Most Popular</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary btn-full apply-filters">Apply Filters</button>
+        </aside>
+
+        <!-- Products Section -->
+        <section class="products-section">
+            <!-- Categories Bar -->
+            <div class="categories-bar">
+                <button class="category-tab active" data-category="all">
+                    <i class="fas fa-th-large"></i> All
+                </button>
+                <button class="category-tab" data-category="books">
+                    <i class="fas fa-book"></i> Books
+                </button>
+                <button class="category-tab" data-category="electronics">
+                    <i class="fas fa-laptop"></i> Electronics
+                </button>
+                <button class="category-tab" data-category="sports">
+                    <i class="fas fa-football-ball"></i> Sports
+                </button>
+                <button class="category-tab" data-category="stationery">
+                    <i class="fas fa-pen"></i> Stationery
+                </button>
+                <button class="category-tab" data-category="miscellaneous">
+                    <i class="fas fa-box-open"></i> Misc
+                </button>
+            </div>
+            
+            <!-- Results Header -->
+            <div class="results-header">
+                <div class="results-info">
+                    <h2>All Products</h2>
+                    <span class="results-count">Showing <strong>156</strong> results</span>
+                </div>
+                <div class="results-actions">
+                    <button class="filter-toggle" id="filter-toggle">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Filters</span>
+                    </button>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Active Filters -->
+            <div class="active-filters" id="active-filters">
+                <!-- Active filter tags will be added here dynamically -->
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+            
+            <!-- Load More -->
+            <div class="load-more-container">
+                <button class="btn btn-outline load-more" id="load-more">
+                    <span>Load More Products</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Filter Overlay (Mobile) -->
+    <div class="filter-overlay" id="filter-overlay"></div>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal">
+        <div class="modal-content quick-view-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="quick-view-body">
+                <div class="quick-view-images">
+                    <div class="main-image">
+                        <img src="" alt="Product" id="quick-view-image">
+                    </div>
+                    <div class="image-thumbnails" id="quick-view-thumbnails">
+                        <!-- Thumbnails -->
+                    </div>
+                </div>
+                <div class="quick-view-details">
+                    <span class="product-category" id="quick-view-category">Electronics</span>
+                    <h2 id="quick-view-title">Product Title</h2>
+                    <div class="product-price" id="quick-view-price">₹2,500</div>
+                    <div class="product-condition">
+                        <span>Condition:</span>
+                        <span class="condition-badge" id="quick-view-condition">Like New</span>
+                    </div>
+                    <p class="product-description" id="quick-view-description">
+                        Product description goes here...
+                    </p>
+                    <div class="seller-info">
+                        <img src="" alt="Seller" id="quick-view-seller-img">
+                        <div class="seller-details">
+                            <h4 id="quick-view-seller-name">Seller Name</h4>
+                            <span id="quick-view-seller-info">B.Tech CSE, 4th Sem</span>
+                        </div>
+                    </div>
+                    <div class="quick-view-actions">
+                        <a href="#" class="btn btn-primary" id="quick-view-chat">
+                            <i class="fas fa-comments"></i>
+                            <span>Chat with Seller</span>
+                        </a>
+                        <a href="#" class="btn btn-outline" id="quick-view-details">
+                            <span>View Full Details</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Wishlist Sidebar -->
+<div class="wishlist-sidebar" id="wishlistSidebar">
+
+    <div class="wishlist-header">
+        <h2>My Wishlist</h2>
+
+        <button id="closeWishlist">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="wishlist-items" id="wishlistItems">
+        <!-- Wishlist Products Will Come Here -->
+    </div>
+
+</div>
+
+<!-- Overlay -->
+<div class="wishlist-overlay" id="wishlistOverlay"></div>
+
+    <script src="js/products.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/browse.js"></script>
+</body>
+</html>
